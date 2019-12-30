@@ -15,6 +15,7 @@
     "react-native": "0.61.5",
     "react-native-device-info": "^5.4.0",
     "react-native-gesture-handler": "^1.5.2",
+    "react-native-super-grid": "^3.1.2",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3"
   },
