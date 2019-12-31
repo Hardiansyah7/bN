@@ -1,8 +1,22 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet,ScrollView} from 'react-native'
+import { Text, View,StyleSheet,ScrollView, BackHandler} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 export default class Detail extends Component {
+    
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackEvent)
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackEvent)
+    }
+
+    onBackEvent = () => {
+        this.props.navigation.goBack()
+        return true
+    }
+
     render() {
         return (
             <ScrollView style={{ flex: 1 }}>

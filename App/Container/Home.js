@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native'
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity, BackHandler } from 'react-native'
 import { FlatGrid } from 'react-native-super-grid';
+import Modal from "react-native-modal";
 
 export default class Home extends Component {
     constructor(props) {
@@ -15,8 +16,26 @@ export default class Home extends Component {
             keturunan: "7 anak; 3 laki-laki Qasim, Abdullah dan Ibrahim, dan 4 perempuan Zainab, Ruqayyah, Ummi Kultsum dan Fatimah az-Zahra.",
             kaum: "Bangsa Arab.",
             tempat_wafat: "Madinah.",
-            code: '#2c3e50'
+            code: '#2c3e50',
+            modal: false,
         }
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.onBackEvent)
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.onBackEvent)
+    }
+
+    onBackEvent = () => {
+        this.setState({ modal: true })
+        return true
+    }
+
+    closeApp() {
+        BackHandler.exitApp()
     }
 
     render() {
@@ -48,6 +67,27 @@ export default class Home extends Component {
         ]
         return (
             <View style={{ flex: 1 }}>
+
+                <Modal
+                    isVisible={this.state.modal}
+                    onBackButtonPress={() => this.setState({ modal: false })}
+                    onBackdropPress={() => this.setState({ modal: false })}
+                >
+                    <View style={{ height: 200, width: '95%', backgroundColor: 'white', alignSelf: 'center', borderRadius: 10 }}>
+                        <View style={{ height: 75, width: '100%', backgroundColor: '#458cff', borderTopRightRadius: 10, borderTopLeftRadius: 10, justifyContent: 'center', paddingHorizontal: 20 }}>
+                            <Text style={{ alignSelf: 'center', fontSize: 16, color: 'white', fontWeight: 'bold' }}>Anda yakin ingin keluar aplikasi ini?</Text>
+                        </View>
+                        <View style={{ justifyContent: 'space-around', flexDirection: 'row', height: 125, paddingHorizontal: 20 }}>
+                            <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: '#e3e3e3', width: 80, height: 30, justifyContent: 'center', borderRadius: 10, elevation: 10 }} onPress={()=> this.setState({ modal: false }, ()=> this.closeApp())}>
+                                <Text style={{ alignSelf: 'center' }}>Keluar</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ alignSelf: 'center', backgroundColor: '#e3e3e3', width: 80, height: 30, justifyContent: 'center', borderRadius: 10, elevation: 10 }}  onPress={()=> this.setState({ modal: false })} >
+                                <Text style={{ alignSelf: 'center' }}>Batal</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </Modal>
 
                 {/* Header */}
                 <View style={{ height: 100, backgroundColor: '#458cff', justifyContent: 'center' }}>
