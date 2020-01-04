@@ -150,10 +150,10 @@ android {
             keyPassword 'android'
         }
         release {
-        storeFile file('bn.keystore')
-        storePassword '00000000'
-        keyAlias 'bn'
-        keyPassword '00000000'
+            storeFile file('bn.keystore')
+            storePassword '123456789'
+            keyAlias 'bn'
+            keyPassword '123456789'
         }
 
     }
@@ -167,7 +167,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-                  signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
