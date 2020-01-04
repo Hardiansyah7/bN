@@ -36,7 +36,7 @@ export default class Detail extends Component {
                     </View>
                 </View>
                 <View style={{ marginBottom: 30, display: 'flex', justifyContent: "space-around", marginTop: 20, marginHorizontal: 10 }}>
-                    <View style={{}}>
+                    <View>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ width: '10%', justifyContent: 'center' }}>
                                 <Ionicons name='md-pin' size={30} color='orange' style={{ alignSelf: 'center' }} />
@@ -47,7 +47,7 @@ export default class Detail extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{ marginTop: 10 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ width: '10%', justifyContent: 'center' }}>
                                 <Ionicons name='ios-book' size={30} color='orange' style={{ alignSelf: 'center' }} />
@@ -58,7 +58,7 @@ export default class Detail extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{ marginTop: 10 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ width: '10%', justifyContent: 'center' }}>
                                 <Ionicons name='md-git-network' size={30} color='orange' style={{ alignSelf: 'center' }} />
@@ -69,7 +69,7 @@ export default class Detail extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{ marginTop: 10 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ width: '10%', justifyContent: 'center' }}>
                                 <Ionicons name='ios-people' size={30} color='orange' style={{ alignSelf: 'center' }} />
@@ -80,7 +80,7 @@ export default class Detail extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{ marginTop: 10 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ width: '10%', justifyContent: 'center' }}>
                                 <Ionicons name='ios-remove-circle' size={30} color='orange' style={{ alignSelf: 'center' }} />
@@ -91,7 +91,7 @@ export default class Detail extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{ marginTop: 10 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ width: '10%', justifyContent: 'center' }}>
                                 <Ionicons name='ios-bookmark' size={30} color='orange' style={{ alignSelf: 'center' }} />
