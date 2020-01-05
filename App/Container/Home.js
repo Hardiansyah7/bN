@@ -67,7 +67,7 @@ export default class Home extends Component {
         ]
         return (
             <View style={{ flex: 1 }}>
-
+                
                 <Modal
                     isVisible={this.state.modal}
                     onBackButtonPress={() => this.setState({ modal: false })}
@@ -86,7 +86,6 @@ export default class Home extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-
                 </Modal>
 
                 {/* Header */}
@@ -108,7 +107,7 @@ export default class Home extends Component {
                             </TouchableOpacity>
                         )}
                     />
-                    <TouchableOpacity style={{ backgroundColor: '#2c3e50', height: 150, marginBottom: 20, marginTop: -10, marginHorizontal: 10, borderRadius: 5, justifyContent: 'flex-end', padding: 10 }} onPress={() => this.props.navigation.navigate('Detail', { nama: this.state.nama, alias: this.state.alias, usia: this.state.usia, periode: this.state.periode, tempat_diutus: this.state.tempat_diutus, disebut: this.state.disebut, keturunan: this.state.keturunan, kaum: this.state.kaum, tempat_wafat: this.state.tempat_wafat })} >
+                    <TouchableOpacity style={{ backgroundColor: '#2c3e50', height: 150, marginBottom: 20, marginTop: -10, marginHorizontal: 10, borderRadius: 5, justifyContent: 'center', padding: 10 }} onPress={() => this.props.navigation.navigate('Detail', { nama: this.state.nama, alias: this.state.alias, usia: this.state.usia, periode: this.state.periode, tempat_diutus: this.state.tempat_diutus, disebut: this.state.disebut, keturunan: this.state.keturunan, kaum: this.state.kaum, tempat_wafat: this.state.tempat_wafat })} >
                         <Text style={styles.itemName}>{this.state.nama}</Text>
                         <Text style={styles.itemCode}>{this.state.periode}</Text>
                     </TouchableOpacity>
@@ -128,15 +127,18 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         height: 150,
+        justifyContent:"center"
     },
     itemName: {
         fontSize: 16,
         color: '#fff',
         fontWeight: '600',
+        alignSelf:"center",
     },
     itemCode: {
         fontWeight: '600',
         fontSize: 12,
         color: '#fff',
+        alignSelf:"center",
     },
 });

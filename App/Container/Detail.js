@@ -20,8 +20,7 @@ export default class Detail extends Component {
     render() {
         return (
             <ScrollView style={{ flex: 1 }}>
-
-                <View style={{ backgroundColor: '#ff9800', justifyContent: 'center', alignItems: "center", height: 150 }}>
+                <View style={{ backgroundColor: '#ff9800', justifyContent: 'center', alignItems: "center", textAlign:'center',height: 150 }}>
                     <Text style={styles.textUtama}> {this.props.navigation.state.params.nama} </Text>
                     <Text style={styles.textAlias}> {this.props.navigation.state.params.alias} </Text>
                 </View>
