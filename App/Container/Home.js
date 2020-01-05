@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
         justifyContent:"center"
     },
     itemName: {
-        fontSize: 16,
+        fontSize: 20,
         color: '#fff',
-        fontWeight: '600',
+        fontWeight: "bold",
         alignSelf:"center",
     },
     itemCode: {
